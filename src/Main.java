@@ -25,9 +25,9 @@ public class Main {
         sum = 0;
         int i = 0;
 
-        while (fibonacci(i) < 4000000) {
-            if (fibonacci(i) % 2 == 0) {
-                sum += fibonacci(i);
+        while (Fibonacci.fibonacci(i) < 4000000) {
+            if (Fibonacci.fibonacci(i) % 2 == 0) {
+                sum += Fibonacci.fibonacci(i);
             }
             i++;
         }
@@ -38,34 +38,19 @@ public class Main {
 
 //      The prime factors of 13195 are 5, 7, 13 and 29.
 //      What is the largest prime factor of the number 600851475143 ?
-//      factorize(13195, 3); // этот вариант работает без прблем
 
-        System.out.println("Problem 3");
-        factorize(600_851_475_143L, 1471L); // тут кидает StackOverflow причем вообще всегда, хотя правильный ответ найден
-
-    }
-
-    public static int fibonacci(int n) {
-        if (n == 0)
-            return 0;
-
-        if (n == 1)
-            return 1;
-
-        else
-            return (fibonacci(n - 1) + fibonacci(n - 2));
-    }
-
-
-    public static void factorize(long n, long k) {
-        if (k > n) return;
-        if (n % k == 0) {
-            System.out.println(k);
-            while (n % k == 0) {
-                n = n / k;
+        long n = 600_851_475_143L;
+        long j;
+        for (j = 3; j <= n; j++) {
+            if (n % j == 0){
+                while (n % j == 0) {
+                    n = n / j;
+                }
             }
         }
-        factorize(n, k + 1);
+
+        System.out.println("Problem 3");
+        System.out.println(j);
     }
 }
 
