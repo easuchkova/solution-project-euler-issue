@@ -6,15 +6,15 @@ public class Problem5 {
         int multiple = 1;
 //        int[] primes = {5, 2, 2, 2, 2, 3, 3, 7, 19, 17, 13, 11}; // все простые числа являющиеся которых входят в множетели до 20
 
-            for (int i = 3; i <= 20; i++) {
-                if (multiple % i != 0)
-                    if (multiple*2 % i == 0)
-                        multiple = multiple*2;
-                    else if (multiple*3 % i == 0)
-                        multiple = multiple*3;
-                    else
-                        multiple = multiple*i;
-            }
+        for (int i = 3; i <= 20; i++) {
+            if (multiple % i != 0)
+                if (multiple * 2 % i == 0)
+                    multiple = multiple * 2;
+                else if (multiple * 3 % i == 0)
+                    multiple = multiple * 3;
+                else
+                    multiple = multiple * i;
+        }
 
         System.out.println();
         System.out.println("Problem 5");
